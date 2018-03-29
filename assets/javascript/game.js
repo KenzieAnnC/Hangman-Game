@@ -26,17 +26,12 @@ var gameWords = [               // game play words
 ];
 
 
-
-
 // Problem: start and reset game to "factory settings"
 
 function resetGame() {
     remainingGuesses = maxGuesses;
-    startGame = false;
 
-    console.log(remainingGuesses);
-
-    word = Math.floor(Math.random() * (gameWords.length));
+    currentWord = Math.floor(Math.random() * (gameWords.length));
   
 
     //clear the letters the user guessed and the word being built
@@ -60,23 +55,43 @@ function resetGame() {
 function updateDisplay() {
 
     document.getElementById("wins").innerText = wins;
-    document.getElementById("currentWord").innerText = "";
+    var currentWordText = "";
     for (var i = 0; i < wordGuess.length; i++) {
-        document.getElementById("currentWord").innerText += wordGuess[i];
+        currentWordText += currentWord[i];
     }
 
+
+    document.getElementById("currentWord").innerText = currentWordText;
     document.getElementById("remainingGuesses").innerText = remainingGuesses;
     document.getElementById("lettersGuessed").innerText = guessedLetters;
-    if(remainingGuesses <= 0) {
-        document.getElementById("youLose").style.cssText = "display: block";
-        gameFinish: true;
-    }
+
+
+    // if(remainingGuesses <= 0) {
+    //     document.getElementById("youLose").style.cssText = "display: block";
+    //     gameFinish: true;
+    // }
 
 };
 
+function evaluateGuess(letter) {
+    var positions = [];
+
+    for (var i = 0; i < gameWords[currentWord].length; i++) {
+        if (gameWords[currentWord][i] === letter) {
+            positions.push(i);
+        }
+    }
+    if (positions.length <= 0) {
+        remainingGuesses--;
+    } else {
+        for (var i = 0; i < positions.length; i++) {
+            wordGuess[positions[i]] = letter;
+        }
+    }
+};
 
 
-document.onkeydown = function (event) {
+document.onkeyup = function (event) {
         if (gameFinish) {
             resetGame();
             gameFinish = false;
@@ -99,7 +114,7 @@ function makeGuess(alphabet) {
 
     if (guessedLetters.indexOf(alphabet) === -1) {
         guessedLetters.push(alphabet);
-        compareGuesss(alphabet);
+        evaluateGuess(alphabet);
 
         }
 
@@ -110,24 +125,24 @@ function makeGuess(alphabet) {
 
 };
 
-function compareGuesss(alphabet) {
+// function compareGuesss(alphabet) {
 
-    var positions = [];
+//     var positions = [];
 
-    for (var i = 0; i < gameWords[currentWord].length; i++) {
-        if(gameWords[currentWord][i] === alphabet) {
-            positions.push(i);
-        }
-    }
+//     for (var i = 0; i < gameWords[currentWord].length; i++) {
+//         if(gameWords[currentWord][i] === alphabet) {
+//             positions.push(i);
+//         }
+//     }
 
-    if (positions.length <= 0) {
-        remainingGuesses --;
-    } else {
-        for(var i = 0; i < positions.length; i++) {
-            wordGuess[positions[i]] = alphabet;
-        }
-    }
-};
+//     if (positions.length <= 0) {
+//         remainingGuesses --;
+//     } else {
+//         for(var i = 0; i < positions.length; i++) {
+//             wordGuess[positions[i]] = alphabet;
+//         }
+//     }
+// };
 
 function checkWin() {
     if(wordGuess.indexOf("_") === -1) {

@@ -54,3 +54,28 @@ function resetGame() {
 
 };
 
+function updateUserScreen() {
+
+    document.getElementById("wins").innerText = wins;
+    document.getElementById("currentWord").innerText = "";
+    for (var i = 0; i < wordGuess.length; i++) {
+        document.getElementById("currentWord").innerText += wordGuess[i];
+    }
+
+
+
+};
+
+document.onkeydown = function(event) {
+
+    if(gameFinish) {
+        resetGame();
+        gameFinish = false;
+    } else { 
+        if(event.keyCode >= 65 && event.keyCode <= 90) {
+            makeGuess(event.key.toLowerCase());
+        }
+    }
+};
+
+

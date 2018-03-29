@@ -14,50 +14,53 @@
     <link rel="stylesheet" href="assets/css/style.css">
 
     <script src="assets/javascript/game.js"></script>
-    
+
     <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
 
 </head>
 
 <body>
 
-<body background="assets/images/small_steps.png">
+    <body background="assets/images/small_steps.png">
 
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-            <h1 class="display-4">Hang Cersei!</h1>
-            <p class="lead">game rules will go here</p>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">Hang Cersei!</h1>
+                <p class="lead">game rules will go here</p>
+            </div>
         </div>
-    </div>
 
 
-    <div class="game">
-        <div class="row">
-            <div class="col-md-6 display-col">
-                <div id="game-image">
-                    <img src="assets/images/cersei.jpg" alt="Cersei" height="400px">
+        <div class="game">
+            <div class="row">
+                <div class="col-md-6 display-col">
+                    <div id="game-image">
+                        <img src="assets/images/cersei.jpg" alt="Cersei" height="400px">
+                    </div>
+                </div>
+                <div class="col-md-6 gameplay-col">
+                    <h2>Press any key to start!</h2>
+                    <br>
+                    <h4>Wins</h4>
+                    <h5 id="wins"></h5>
+                    <h4>Current Word</h4>
+                    <h5 id="currentWord"></h5>
+                    <h4>Remaining Guesses</h4>
+                    <h5 id="remainingGuesses"></h5>
+                    <h4>Letters Guessed</h4>
+                    <h5 id="lettersGuessed"></h5>
+                    <h3 id="youWin">You win!</h3>
+                    <h3 id="youLose">You lose :(</h3>
+                    <h4 id="tryAgain">Press any key to try again</h4>
                 </div>
             </div>
-            <div class="col-md-6 gameplay-col">
-                <h2>Press any key to start!</h2>
-                <br>
-                <h4>Wins</h4>
-                <h5 id="wins"></h5>
-                <h4>Current Word</h4>
-                <h5 id="currentWord"></h5>
-                <h4>Remaining Guesses</h4>
-                <h5 id="remainingGuesses"></h5>
-                <h4>Letters Guessed</h4>
-                <h5 id="lettersGuessed"></h5>
-            </div>
+
+
+
+
         </div>
 
 
-
-
-    </div>
-
-
-</body>
+    </body>
 
 </html>

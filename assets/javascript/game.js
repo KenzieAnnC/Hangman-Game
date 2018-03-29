@@ -106,15 +106,15 @@ document.onkeyup = function (event) {
     };
 
 
-function makeGuess(alphabet) {
+function makeGuess(letter) {
     if (remainingGuesses > 0) {
         if (!startGame) {
             startGame = true;
         }
 
-    if (guessedLetters.indexOf(alphabet) === -1) {
-        guessedLetters.push(alphabet);
-        evaluateGuess(alphabet);
+    if (guessedLetters != [currentWord]) {
+        guessedLetters.push(letter);
+        evaluateGuess(letter);
 
         }
 

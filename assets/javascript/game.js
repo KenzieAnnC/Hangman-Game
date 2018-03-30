@@ -46,10 +46,11 @@ function resetGame() {
         document.getElementById("youWin").style.cssText = "display: none";
         document.getElementById("youLose").style.cssText = "display: none";
         document.getElementById("tryAgain").style.cssText = "display: none";
+        document.getElementById("wordCurrent").style.cssText = "display: block";
     };
 
     updateDisplay();
-    // console.log(guessedLetters);
+    console.log(wordGuess);
 
 };
 
@@ -57,18 +58,18 @@ function updateDisplay() {
 
     document.getElementById("wins").innerText = wins;
 
-    var currentWordText = "_ ";
+    var currentWordText = "";
     for (var i = 0; i < wordGuess.length; i++) {
         currentWordText += currentWord[i];
     }
 
 
-    document.getElementById("wordCurrent").innerText = currentWordText;
+    document.getElementById("wordCurrent").innerText = wordGuess;
     document.getElementById("remainingGuesses").innerText = remainingGuesses;
     document.getElementById("lettersGuessed").innerText = guessedLetters;
 
     // console.log(currentWord);
-    console.log(currentWordText)
+    console.log(currentWordText);
 
 };
 
@@ -122,27 +123,8 @@ function makeGuess(letter) {
 
     updateDisplay();
    
-
 };
 
-// function compareGuesss(alphabet) {
-
-//     var positions = [];
-
-//     for (var i = 0; i < gameWords[currentWord].length; i++) {
-//         if(gameWords[currentWord][i] === alphabet) {
-//             positions.push(i);
-//         }
-//     }
-
-//     if (positions.length <= 0) {
-//         remainingGuesses --;
-//     } else {
-//         for(var i = 0; i < positions.length; i++) {
-//             wordGuess[positions[i]] = alphabet;
-//         }
-//     }
-// };
 
 function checkWin() {
     if(wordGuess.indexOf("_") === -1) {

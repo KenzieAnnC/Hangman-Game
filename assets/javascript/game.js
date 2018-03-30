@@ -1,6 +1,6 @@
 
 // VARIABLES //
-var letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','o','p','q','q','r','s','t','u','v','w','x','y','z'];
+var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','o','p','q','q','r','s','t','u','v','w','x','y','z'];
 
 var currentWord;                // word user is trying to guess
 var wordGuess = [];             // array of letters the user has guessed                                          correctly in the currentWord
@@ -84,7 +84,7 @@ function evaluateGuess(letter) {
             wordGuess[positions[i]] = letter;
         }
     }
-  
+//   console.log(letters);
 };
 
 
@@ -93,35 +93,28 @@ document.onkeyup = function(event) {
             resetGame();
             gameFinish = true;
         } else {
-            if (event.keyCode = letters) {
+            if (event.keyCode = alphabet) {
                 makeGuess(event.key);
                 updateDisplay();
                 checkWin();
                 checkloss();
             }
+            
         }
     };
 
 
 function makeGuess(letter) {
     if (remainingGuesses > 0) {
-        // if (!startGame) {
-        //     startGame = true;
-        // }
+   
 
     if (guessedLetters.indexOf(letter) === -1) {
         guessedLetters.push(letter);
         evaluateGuess(letter);
-
-    // if (guessedLetters != [currentWord]) {
-    //     guessedLetters.push(letter) ===-1;
-    //     evaluateGuess(letter);
-
-    //     }
     }
+}
     
     updateDisplay();
-}
 
 };
 
@@ -137,11 +130,10 @@ function checkWin() {
     }
 };
 
-function checkloss()
-{
+function checkloss() {
     if(remainingGuesses <= 0) {
-    document.getElementById("youLose").style.cssText = "display: block";
-    document.getElementById("tryAgain").style.cssText = "display: block";
-    gameFinish: true;
+        document.getElementById("youLose").style.cssText = "display: block";
+        document.getElementById("tryAgain").style.cssText = "display: block";
+        gameFinish: true;
     }
 }

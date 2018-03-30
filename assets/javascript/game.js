@@ -1,6 +1,6 @@
 
 // VARIABLES //
-var letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','o','p','q','q','r','s','t','u','v','w','x','y','z'];
+// var letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','o','p','q','q','r','s','t','u','v','w','x','y','z'];
 
 var currentWord;                // word user is trying to guess
 var wordGuess = [];             // array of letters the user has guessed                                    correctly in the currentWord
@@ -46,30 +46,26 @@ function resetGame() {
         document.getElementById("youWin").style.cssText = "display: none";
         document.getElementById("youLose").style.cssText = "display: none";
         document.getElementById("tryAgain").style.cssText = "display: none";
-        document.getElementById("wordCurrent").style.cssText = "display: block";
-    };
+     
+    }
 
     updateDisplay();
-    console.log(wordGuess);
+    
+   
+
 
 };
 
 function updateDisplay() {
 
     document.getElementById("wins").innerText = wins;
-
-    // var currentWordText = "";
-    // for (var i = 0; i < wordGuess.length; i++) {
-    //     currentWordText += currentWord[i];
-    // }
-
-
     document.getElementById("wordCurrent").innerText = wordGuess;
     document.getElementById("remainingGuesses").innerText = remainingGuesses;
     document.getElementById("lettersGuessed").innerText = guessedLetters;
 
 
     // checkWin();
+    console.log(currentWord);
 
 };
 

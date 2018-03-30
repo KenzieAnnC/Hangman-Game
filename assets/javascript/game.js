@@ -105,20 +105,24 @@ document.onkeyup = function(event) {
 
 function makeGuess(letter) {
     if (remainingGuesses > 0) {
-        if (!startGame) {
-            startGame = true;
-        }
+        // if (!startGame) {
+        //     startGame = true;
+        // }
 
-    if (guessedLetters != [currentWord]) {
+    if (guessedLetters.indexOf(letter) === -1) {
         guessedLetters.push(letter);
         evaluateGuess(letter);
 
-        }
+    // if (guessedLetters != [currentWord]) {
+    //     guessedLetters.push(letter) ===-1;
+    //     evaluateGuess(letter);
 
+    //     }
     }
-
+    
     updateDisplay();
-   
+}
+
 };
 
 

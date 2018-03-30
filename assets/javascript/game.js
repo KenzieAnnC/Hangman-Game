@@ -58,18 +58,18 @@ function updateDisplay() {
 
     document.getElementById("wins").innerText = wins;
 
-    var currentWordText = "";
-    for (var i = 0; i < wordGuess.length; i++) {
-        currentWordText += currentWord[i];
-    }
+    // var currentWordText = "";
+    // for (var i = 0; i < wordGuess.length; i++) {
+    //     currentWordText += currentWord[i];
+    // }
 
 
     document.getElementById("wordCurrent").innerText = wordGuess;
     document.getElementById("remainingGuesses").innerText = remainingGuesses;
     document.getElementById("lettersGuessed").innerText = guessedLetters;
 
-    // console.log(currentWord);
-    console.log(currentWordText);
+
+    // checkWin();
 
 };
 
@@ -95,7 +95,7 @@ function evaluateGuess(letter) {
 document.onkeyup = function (event) {
         if (gameFinish) {
             resetGame();
-            gameFinish = false;
+            gameFinish = true;
         } else {
             if (event.keyCode >= 65 && event.keyCode <= 90) {
                 makeGuess(event.key.toLowerCase());

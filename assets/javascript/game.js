@@ -49,6 +49,7 @@ function resetGame() {
     };
 
     updateDisplay();
+    console.log(guessedLetters);
 
 };
 
@@ -61,15 +62,12 @@ function updateDisplay() {
     }
 
 
-    document.getElementById("currentWord").innerText = currentWordText;
+    document.getElementById("wordCurrent").innerText = currentWordText;
     document.getElementById("remainingGuesses").innerText = remainingGuesses;
     document.getElementById("lettersGuessed").innerText = guessedLetters;
 
-
-    // if(remainingGuesses <= 0) {
-    //     document.getElementById("youLose").style.cssText = "display: block";
-    //     gameFinish: true;
-    // }
+    console.log(currentWord);
+    console.log(currentWordText)
 
 };
 
@@ -88,6 +86,10 @@ function evaluateGuess(letter) {
             wordGuess[positions[i]] = letter;
         }
     }
+
+  
+    console.log(i);
+  
 };
 
 

@@ -65,7 +65,7 @@ function updateDisplay() {
 
 
     // checkWin();
-    console.log(currentWord);
+    // console.log(currentWord);
 
 };
 
@@ -112,7 +112,7 @@ function makeGuess(letter) {
         guessedLetters.push(letter);
         evaluateGuess(letter);
     }
-}
+    }
     
     updateDisplay();
 

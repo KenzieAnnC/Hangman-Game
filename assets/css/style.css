@@ -7,12 +7,35 @@
 }
 
 .game {
-    width: 960px;
+    width: 800px;
     margin: 0 auto;
+    height: 700px;
+}
+
+
+.jumbotron {
+    color: white;
+    background-color: black;
+}
+
+.gameplay-col {
+    border: double;
 }
 
 #game-image {
-    border-right: double;
+    float: right;
+    margin: 0 auto; 
 
 }
 
+.container {
+    text-align: center;
+}
+
+.row {
+    height: 575px;
+}
+
+.display-col {
+    border: double;
+}

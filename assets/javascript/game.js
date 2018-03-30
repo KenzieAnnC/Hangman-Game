@@ -33,7 +33,6 @@ function resetGame() {
 
     currentWord = Math.floor(Math.random() * (gameWords.length));
   
-
     //clear the letters the user guessed and the word being built
 
     guessedLetters = [];
@@ -42,19 +41,16 @@ function resetGame() {
     for (var i = 0; i < gameWords[currentWord].length; i++) {
         wordGuess.push("_");
 
-
         document.getElementById("youWin").style.cssText = "display: none";
         document.getElementById("youLose").style.cssText = "display: none";
         document.getElementById("tryAgain").style.cssText = "display: none";
-     
+ 
     }
 
     updateDisplay();
     
-   
-
-
 };
+
 
 function updateDisplay() {
 
@@ -63,9 +59,6 @@ function updateDisplay() {
     document.getElementById("remainingGuesses").innerText = remainingGuesses;
     document.getElementById("lettersGuessed").innerText = guessedLetters;
 
-
-    // checkWin();
-    // console.log(currentWord);
 
 };
 
@@ -102,7 +95,6 @@ document.onkeyup = function(event) {
         }
     };
 
-
 function makeGuess(letter) {
     if (remainingGuesses > 0) {
    
@@ -122,10 +114,10 @@ function checkWin() {
     if(wordGuess.indexOf("_") === -1) {
         document.getElementById("youWin").style.cssText = "display: block";
         document.getElementById("tryAgain").style.cssText = "display: block";
-        wins++;
         gameFinish: true;
-
+        wins++;
         document.getElementById("wins").innerText = wins;
+        
     }
 };
 

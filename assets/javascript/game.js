@@ -49,14 +49,15 @@ function resetGame() {
     };
 
     updateDisplay();
-    console.log(guessedLetters);
+    // console.log(guessedLetters);
 
 };
 
 function updateDisplay() {
 
     document.getElementById("wins").innerText = wins;
-    var currentWordText = "";
+
+    var currentWordText = "_ ";
     for (var i = 0; i < wordGuess.length; i++) {
         currentWordText += currentWord[i];
     }
@@ -66,7 +67,7 @@ function updateDisplay() {
     document.getElementById("remainingGuesses").innerText = remainingGuesses;
     document.getElementById("lettersGuessed").innerText = guessedLetters;
 
-    console.log(currentWord);
+    // console.log(currentWord);
     console.log(currentWordText)
 
 };
@@ -86,9 +87,6 @@ function evaluateGuess(letter) {
             wordGuess[positions[i]] = letter;
         }
     }
-
-  
-    console.log(i);
   
 };
 
@@ -152,6 +150,8 @@ function checkWin() {
         document.getElementById("tryAgain").style.cssText = "display: block";
         wins++;
         gameFinish: true;
+
+        document.getElementById("wins").innerText = wins;
     }
 };
 

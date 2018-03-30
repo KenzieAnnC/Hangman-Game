@@ -3,7 +3,7 @@
 var letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','o','p','q','q','r','s','t','u','v','w','x','y','z'];
 
 var currentWord;                // word user is trying to guess
-var wordGuess = [];             // array of letters the user has guessed                                    correctly in the currentWord
+var wordGuess = [];             // array of letters the user has guessed                                          correctly in the currentWord
 var guessedLetters = [];        // letters the user has guessed
 var remainingGuesses = 0;       // how many "lives" the user has left
 var wins = 0;                   // how many times the user has won
@@ -94,7 +94,7 @@ document.onkeyup = function(event) {
             gameFinish = true;
         } else {
             if (event.keyCode = letters) {
-                makeGuess(event.key.toLowerCase());
+                makeGuess(event.key);
                 updateDisplay();
                 checkWin();
                 checkloss();

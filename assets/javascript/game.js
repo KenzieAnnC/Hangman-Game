@@ -1,6 +1,6 @@
 
 // VARIABLES //
-// var letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','o','p','q','q','r','s','t','u','v','w','x','y','z'];
+var letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','o','p','q','q','r','s','t','u','v','w','x','y','z'];
 
 var currentWord;                // word user is trying to guess
 var wordGuess = [];             // array of letters the user has guessed                                    correctly in the currentWord
@@ -88,12 +88,12 @@ function evaluateGuess(letter) {
 };
 
 
-document.onkeyup = function (event) {
+document.onkeyup = function(event) {
         if (gameFinish) {
             resetGame();
             gameFinish = true;
         } else {
-            if (event.keyCode >= 65 && event.keyCode <= 90) {
+            if (event.keyCode = letters) {
                 makeGuess(event.key.toLowerCase());
                 updateDisplay();
                 checkWin();

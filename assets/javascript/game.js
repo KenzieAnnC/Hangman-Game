@@ -26,6 +26,7 @@ var gameWords = [               // game play words
 ];
 
 
+
 // Problem: start and reset game to "factory settings"
 
 function resetGame() {
@@ -47,6 +48,12 @@ function resetGame() {
  
     }
 
+    // function initArrays() {
+    //     guessedLetters = [];
+    //     wordGuess = [];
+    // }
+
+    // initArrays();
     updateDisplay();
     
 };
@@ -91,8 +98,11 @@ document.onkeyup = function(event) {
                 checkWin();
                 checkloss();
             }
-            
+     
+
         }
+            
+        
     };
 
 function makeGuess(letter) {
@@ -104,7 +114,6 @@ function makeGuess(letter) {
         evaluateGuess(letter);
     }
     }
-    
     updateDisplay();
 
 };
@@ -119,6 +128,14 @@ function checkWin() {
         document.getElementById("wins").innerText = wins;
         
     }
+
+    if (gameFinish) {
+
+        if (event.keyCode) {
+            resetGame();
+        }
+           
+        }
 };
 
 function checkloss() {

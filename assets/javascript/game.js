@@ -29,6 +29,8 @@ var gameWords = [               // game play words
 
 // Problem: start and reset game to "factory settings"
 
+
+
 function resetGame() {
     remainingGuesses = maxGuesses;
 
@@ -47,7 +49,7 @@ function resetGame() {
         document.getElementById("tryAgain").style.cssText = "display: none";
  
     }
-
+    gameFinish = false;
     // function initArrays() {
     //     guessedLetters = [];
     //     wordGuess = [];
@@ -90,7 +92,7 @@ function evaluateGuess(letter) {
 document.onkeyup = function(event) {
         if (gameFinish) {
             resetGame();
-            gameFinish = true;
+        
         } else {
             if (event.keyCode >= 65 && event.keyCode <= 90) {
                 makeGuess(event.key);
@@ -106,7 +108,7 @@ document.onkeyup = function(event) {
     };
 
 function makeGuess(letter) {
-    if (remainingGuesses > 0) {
+    if (remainingGuesses >= 0) {
    
 
     if (guessedLetters.indexOf(letter) === -1) {
@@ -123,25 +125,20 @@ function checkWin() {
     if(wordGuess.indexOf("_") === -1) {
         document.getElementById("youWin").style.cssText = "display: block";
         document.getElementById("tryAgain").style.cssText = "display: block";
-        gameFinish: true;
+        gameFinish = true;
         wins++;
         document.getElementById("wins").innerText = wins;
         
     }
 
-    if (gameFinish) {
-
-        if (event.keyCode) {
-            resetGame();
-        }
            
-        }
+        
 };
 
 function checkloss() {
     if(remainingGuesses <= 0) {
         document.getElementById("youLose").style.cssText = "display: block";
         document.getElementById("tryAgain").style.cssText = "display: block";
-        gameFinish: true;
+        gameFinish = true;
     }
 }
